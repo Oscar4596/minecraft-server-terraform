@@ -10,7 +10,7 @@ resource "aws_instance" "minecraft_server" {
   vpc_security_group_ids      = [aws_security_group.minecraft_server.id]
 
   user_data_replace_on_change = true
-  user_data = <<-EOF
+  user_data                   = <<-EOF
               #!/bin/bash
               set -e
               sudo apt update
