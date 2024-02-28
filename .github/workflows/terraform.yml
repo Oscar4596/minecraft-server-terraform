@@ -52,7 +52,7 @@ on:
 env:
   TF_CLOUD_ORGANIZATION: "Kroz"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-  TF_WORKSPACE: "minecraft-server-terraform"
+  #TF_WORKSPACE: "minecraft-server-terraform"
   CONFIG_DIRECTORY: "./"
 
 permissions:
