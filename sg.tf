@@ -10,7 +10,7 @@ resource "aws_security_group" "minecraft_server" {
 
 resource "aws_vpc_security_group_ingress_rule" "minecraft_server_ssh" {
   security_group_id = aws_security_group.minecraft_server.id
-  cidr_ipv4         = "186.155.12.50/32"
+  cidr_ipv4         = local.ssh_source_ip
   from_port         = 22
   ip_protocol       = "tcp"
   to_port           = 22
@@ -23,4 +23,10 @@ resource "aws_vpc_security_group_ingress_rule" "minecraft_server_port" {
   from_port         = 25565
   ip_protocol       = "tcp"
   to_port           = 25565
+}
+
+resource "aws_vpc_security_group_egress_rule" "minecraft_server" {
+  security_group_id = aws_security_group.minecraft_server.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = -1
 }

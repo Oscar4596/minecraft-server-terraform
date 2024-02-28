@@ -21,4 +21,8 @@ resource "aws_instance" "minecraft_server" {
               echo "eula=true" > eula.txt
               java -Xms2G -Xmx4G -jar server.jar nogui
               EOF
+
+  tags = {
+    Name = "minecraft_server"
+  }
 }
