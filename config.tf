@@ -1,6 +1,6 @@
 terraform {
   required_version = "1.7.4"
-  backend "remote" {
+  /* backend "remote" {
     # The name of your Terraform Cloud organization.
     organization = "Kroz"
 
@@ -8,7 +8,7 @@ terraform {
     workspaces {
       name = "minecraft-server-terraform"
     }
-  }
+  } */
 }
 
 provider "aws" {
