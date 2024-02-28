@@ -7,9 +7,9 @@ resource "aws_instance" "minecraft_server" {
   instance_type               = "t2.medium"             # RAM: 4 | vCPU: 2
   key_name                    = "test"
   associate_public_ip_address = true
-  user_data_replace_on_change = true
   vpc_security_group_ids      = [aws_security_group.minecraft_server.id]
 
+  user_data_replace_on_change = true
   user_data = <<-EOF
               #!/bin/bash
               set -e
